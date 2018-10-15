@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form id="uploadForm" enctype="multipart/form-data">
+		    <input type="file" name="file" id="file" value="" multiple="multiple" />
+		    <input type="button" value="提交"/>
+		</form>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(()=> {
+				
+				$('input[type="button"]').click(() => {
+					$.ajax({
+						type:"post",
+						url:"http://localhost:3000/upload",
+						async:true,
+						cache: false,
+						processData: false,
+    					contentType: false,
+    					data: new FormData($('#uploadForm')[0]),
+						success(res) {
+							console.log(res)
+						},
+						fail(err){
+							console.log(err)
+						}
+					})
+				})
+				
+			})
+		</script>
+	</body>
+</html>

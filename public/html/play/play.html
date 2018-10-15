@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <meta name="referrer" content="never">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+        <title></title>
+        <link rel="stylesheet" href="/html/model/css/public.css">
+        <style>
+            html{
+                width: 100%;
+                min-height: 100%;
+                max-width: 640px;
+                margin: 0 auto;
+                background-color: #F2F1F6;
+            }
+            body {
+                width: 100%;
+                max-width: 640px;
+                min-height: 100vh;
+                background-color: #FFFFFF ;
+            }
+            .play {
+                width: 100%;
+                height: 4rem;
+            }
+        </style>
+        <script src="/html/model/js/rem.js"></script>
+	</head>
+
+	<body>
+        <div id="app">
+            <iframe class="play"
+                :src="url" 
+                scrolling="no" 
+                border="0" 
+                frameborder="no" 
+                framespacing="0" 
+                allowfullscreen="true">
+            </iframe>
+        </div>
+            
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17-beta.0/vue.min.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    url: ''
+                },
+                methods: {
+                    geturlID() {
+                        let url = window.location.href
+                        let id = url.substring(url.indexOf('=') + 1, url.length)
+                        this.url = `//player.bilibili.com/player.html?aid=${id}&page=1`
+                    }
+                },
+                created() {
+                    this.geturlID()
+                },
+                mounted() {
+                    
+                }
+            })
+        
+        </script>
+    </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="referrer" content="never">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="./html/model/css/public.css">
+		<link rel="stylesheet" href="./html/model/css/model.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.0/css/swiper.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="./html/index/app.css">
+		<script src="./html/model/js/rem.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<header class="app-header">
+				<div class="app-tab" :class='{ active : index == 1 }' @click='mytab(1)'>首页</div>
+				<div class="app-tab" :class='{ active : index == 2 }' @click='mytab(2)'>动画</div>
+				<div class="app-tab" :class='{ active : index == 3 }' @click='mytab(3)'>番剧</div>
+				<div class="app-tab" :class='{ active : index == 4 }' @click='mytab(4)'>国创</div>
+				<div class="app-tab" :class='{ active : index == 5 }' @click='mytab(5)'>音乐</div>
+			</header>
+			
+			<div class="app-swiper">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" v-for='(l,i) in loc' :key='i'>
+							<img :src="l.pic" alt="">
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+			
+			<div class="app-list">
+				<div class="app-box" v-for='(st,i) in list' :key='i' @click='openplay(st)'>
+					<img v-lazy="st.pic" alt="">
+					<div class="box-tr">
+						<div class="box-tr-txt" v-html='st.title'></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17-beta.0/vue.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.0/js/swiper.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-lazyload/1.2.2/vue-lazyload.js"></script>
+		<script src="./html/model/js/model.js"></script>
+		<script>
+			Vue.use(VueLazyload)
+			new Vue({
+				el: '#app',
+				data: {
+					list: [],         //列表数据
+					loc: [],          //轮播数据
+					index: 1,
+					params: {
+						rid: 0,
+						day: 3
+					}
+				},
+				methods: {
+					//获取列表
+					async _ranking(param) {
+						mv.LoadSo()
+						let res = await axios.get('/ranking', {
+							params: param
+						})
+						
+						if (param.i == 3 || param.i == 4) {
+							this.list = res.data.data
+						} else {
+							this.list = res.data.data.list
+						}
+
+						mv.LoadDe()
+					},
+					//获取轮播
+					async _loc() {
+						let res = await axios.get('/loc')
+
+						this.loc = res.data.data
+					},
+					//顶部tab切换
+					mytab(i) {
+						if (i == 1) {
+							this.params = { rid: 0, day: 3, i: 1  }
+						} else if (i == 2) {
+							this.params = { rid: 1, day: 7, i: 2  }
+						} else if (i == 3) {
+							this.params = { rid: 152, day: 7, i: 3  }
+						} else if (i == 4) {
+							this.params = { rid: 167, day: 7, i: 4  }
+						} else if (i == 5) {
+							this.params = { rid: 3, day: 7, i: 5 }
+						}
+						
+						this._ranking(this.params)
+						this.index = i
+					},
+					async _dnew(aid){
+						let res = await axios.get('/dnew', {
+							params: {
+								aid: aid
+							}
+						})
+
+						console.log(res.data)
+					},
+					mySwiper() {
+						new Swiper('.swiper-container', {
+							autoplay: true,			//可选选项，自动滑动     
+							loop: true,
+							loopAdditionalSlides: 3,
+							pagination: {
+								el: '.swiper-pagination',
+								// dynamicBullets: true,
+								dynamicMainBullets: 2
+							},
+							observer:true,
+							observeParents:true
+						})
+					},
+					openplay(st) {
+						
+						window.open('./html/play/play.html?aid=' + st.aid)
+					}
+				},
+				created() {
+					this._ranking(this.params)
+					this._loc()
+
+				},
+				mounted() {
+					this.mySwiper()
+				}
+			})
+
+		</script>
+	</body>
+</html>

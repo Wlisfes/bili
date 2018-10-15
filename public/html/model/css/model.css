@@ -1,0 +1,218 @@
+
+.mv-model{
+	z-index: 50000;
+}
+.toast{
+	width: 120px;
+	height: 120px;
+	background-color: rgba(0,0,0,.5);
+	border-radius: 5px;
+	z-index: 5000;
+	top: 0;bottom: 0;right: 0;left: 0;
+	margin: auto;
+	display: table;
+	box-sizing: border-box;
+	position: fixed;
+	overflow: hidden;
+}
+.mv-toast{
+	width: 80px;
+	height: 50px;
+	background: url('http://a.lisfes.cn/moudel/Taost.png') no-repeat 10px 0px;
+	background-size: 70px 50px;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+.mv-toast-cont{
+	margin-top: 15px;
+	font-size: 16px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.mv-load{
+	width: 100%;
+	height: 42px;
+	margin-top: 20px;
+	padding: 0 calc(50% - 21px);
+	box-sizing: border-box;
+}
+.mv-loader{
+	width: 42px;
+	height: 42px;
+	background: url('http://a.lisfes.cn/moudel/mvloader.png') no-repeat 0px 0px;
+	animation: load 1500ms infinite linear;
+	background-size: 42px 42px;
+}
+.mv-load-cont{
+	margin-top: 15px;
+	font-size: 16px;
+	text-align: center;
+	color: #FFFFFF;
+}
+@keyframes load{
+	from{
+		transform: rotateZ(0deg);
+	}
+	to{
+		transform: rotateZ(360deg);
+	}
+}
+
+
+
+.mv-model-viwe{
+	position: fixed;
+    display: table;
+    z-index: 5000;
+    width: 80%;
+    max-width: 300px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    animation: modelviwe 200ms;
+}
+@keyframes modelviwe{
+	from{
+		transform: scale(.5);
+		opacity: 0;
+	}
+	to{
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+.mv-model-title{
+	font-size: 18px;
+	font-weight: 400;
+	padding: 20px 25px 10px 25px;
+}
+.mv-model-cont{
+    min-height: 40px;
+    font-size: 16px;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #999;
+    padding: 0 25px 20px 25px;
+}
+.mv-model-btn{
+	height: 48px;
+	line-height: 48px;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	font-size: 16px;
+}
+.mv-model-btn:before{
+	content: '';
+	position: absolute;
+	width: 200%;
+	height: 1px;
+	top: 0;
+	border-top: 1px solid rgba(0,0,0,.3);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: scale(0.5);
+	transform: scale(0.5);
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box
+}
+.mv-model-btn-left,
+.mv-model-btn-right{
+	position: relative;
+	flex: 1;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.mv-model-btn-right{
+	/* color: #09BB07; */
+}
+.mv-model-btn-left:before{
+	content: '';
+	position: absolute;
+	width: 1px;
+	height: 200%;
+	right: 0;
+	border-right: 1px solid rgba(0,0,0,.3);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: scale(0.5);
+	transform: scale(0.5);
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+
+
+
+#mv-meloader{
+	
+}
+.mv-spinner {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  margin: 70% auto;
+}
+ 
+.mv-double-bounce1, .mv-double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgb(38, 162, 255);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+   
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+ 
+.mv-double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+ 
+@-webkit-keyframes bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(2.0) }
+}
+ 
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(2.0);
+    -webkit-transform: scale(2.0);
+  }
+}
+
+
+.mv-msg{
+	max-width: 160px;
+	max-height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: rgba(0,0,0,.5);
+	border-radius: 5px;
+	z-index: 5000;
+	font-size: 16px;
+	margin: auto;
+	left: 0;right: 0;top: 0;bottom: 0;
+	box-sizing: border-box;
+	position: fixed;
+	overflow: hidden;
+	color: #FFFFFF;
+}
+
+
+
+
