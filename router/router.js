@@ -5,6 +5,7 @@ import axios from 'axios'
 import fs from 'fs'
 import multer from 'koa-multer'
 
+
 const router = Router()
 
 //上传配置
@@ -28,6 +29,7 @@ router.get('/', async (ctx) => {
 
     await ctx.render('html/index/index')
 })
+
 
 //首页列表list
 router.get('/ranking', async (ctx) => {
