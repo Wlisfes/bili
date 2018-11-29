@@ -2,7 +2,6 @@
 
 import Router from 'koa-router'
 import axios from 'axios'
-import fs from 'fs'
 import multer from 'koa-multer'
 
 
@@ -59,6 +58,17 @@ router.get('/dnew', async (ctx) => {
     ctx.body = res.data
 })
 
+
+router.get('/A236_Web', async (ctx) => {
+    // let url = 'http://service.picasso.adesk.com/v1/wallpaper/category'
+
+    let url = 'http://service.picasso.adesk.com/v1/wallpaper/category/4e4d610cdf714d2966000003/wallpaper'
+    let res = await axios({
+        url: url,
+        method: 'get',
+    })
+    ctx.body = res.data
+})
 
 
 //轮播图
