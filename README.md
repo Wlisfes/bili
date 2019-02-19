@@ -2,9 +2,9 @@
 基于node koa事项的B站视频播放
 
 
-git clone git@github.com:Wlisfes/bili.git
-npm install
-node index.js
+#  git clone git@github.com:Wlisfes/bili.git
+#  npm install
+#  node index.js
 
 
   
