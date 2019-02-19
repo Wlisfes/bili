@@ -1,9 +1,9 @@
 # bili
 
 #基于node koa的B站视频播放
-git clone git@github.com:Wlisfes/bili.git
-npm install
-node index.js
+git clone git@github.com:Wlisfes/bili.git  <br/>
+npm install  <br/>
+node index.js  <br/>
 
 
   
@@ -20,12 +20,12 @@ node index.js
 
 
 #   依赖插件
-   babel-core
-   babel-plugin-transform-runtime
-   babel-preset-es2015
-   babel-preset-stage-0
+   babel-core  <br/>
+   babel-plugin-transform-runtime  <br/>
+   babel-preset-es2015  <br/>
+   babel-preset-stage-0  <br/>
 
 
 #  入口文件  index.js
-   require('babel-core/register');
+   require('babel-core/register');  <br/>
    require('./app');
