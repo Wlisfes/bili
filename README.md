@@ -1,10 +1,9 @@
 # bili
-基于node koa事项的B站视频播放
 
-
-#  git clone git@github.com:Wlisfes/bili.git
-#  npm install
-#  node index.js
+#基于node koa的B站视频播放
+git clone git@github.com:Wlisfes/bili.git
+npm install
+node index.js
 
 
   
