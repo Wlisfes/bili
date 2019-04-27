@@ -22,15 +22,16 @@ npm run build   打包
 ```
 
 # 技术栈
-koa（web服务框架）
-koa-router（路由）
-axios（http请求）
+
+koa（web服务框架）  
+koa-router（路由）  
+axios（http请求）  
 
 
 # 界面欣赏
 
 #### iPhone6 Plus预览
-![ ](https://raw.githubusercontent.com/Wlisfes/bili/master/Screenshot/1.png)
+![ ](https://github.com/Wlisfes/bili/blob/master/Screenshot/1.png)
 ![ ](https://raw.githubusercontent.com/Wlisfes/bili/master/Screenshot/2.png)
 ![ ](https://raw.githubusercontent.com/Wlisfes/bili/master/Screenshot/3.png)
 ![ ](https://raw.githubusercontent.com/Wlisfes/bili/master/Screenshot/4.png)
