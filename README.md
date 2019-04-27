@@ -16,7 +16,7 @@ cd bili
 
 npm install     安装依赖
 
-npm run dev     运行
+npm run app     运行
 
 npm run build   打包
 ```
@@ -31,7 +31,7 @@ axios（http请求）
 # 界面欣赏
 
 #### iPhone6 Plus预览
-![ ](https://github.com/Wlisfes/bili/blob/master/Screenshot/1.png)
+![ ](https://raw.githubusercontent.com/Wlisfes/bili/master/Screenshot/1.png)
 ![ ](https://raw.githubusercontent.com/Wlisfes/bili/master/Screenshot/2.png)
 ![ ](https://raw.githubusercontent.com/Wlisfes/bili/master/Screenshot/3.png)
 ![ ](https://raw.githubusercontent.com/Wlisfes/bili/master/Screenshot/4.png)
